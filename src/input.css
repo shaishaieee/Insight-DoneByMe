@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container
+{
+    @apply max-w-[80rem] p-6 w-full mx-auto;
+}
+
+@layer components{
+/* ---HEADER--- */
+.header__wrapper{
+    @apply flex justify-between;
+}
+.header__wrapper nav ul{
+    @apply hidden md:visible md:bg-transparent md:flex pt-2;
+}
+.header__wrapper nav ul li a{
+    @apply md:text-white font-bold hover:text-orange-600 hover:bg-white px-8 py-2;
+}
+
+.header__wrapper img{
+    @apply w-20 cursor-pointer;
+}
+.header__action
+{
+    @apply bg-gray-500 absolute top-0 right-0 w-[0] h-[100vh] px-0 pt-0 overflow-hidden transition-all shadow-md md:static md:h-fit md:w-fit md:shadow-none md:hidden;
+
+}
+.header__action.open
+{
+    @apply w-[100%] px-10 pt-10 transition-all;
+}
+    .header__action .header__navm
+    {
+        @apply flex  flex-col gap-8 text-2xl font-bold text-white text-center pt-20 md:hidden;
+    }
+    .header__action .header__navm li a:hover{
+        @apply text-orange-600 bg-white px-16 py-2;
+    }
+
+    .header__action .header__iconslist{
+        @apply flex gap-10 justify-center pt-16 pb-[4rem] text-xl text-white;
+    }
+    .header__action img{
+        @apply block m-auto;
+    }
+
+/* ---BANNER--- */
+.banner{
+    @apply bg-insightBanner min-h-[100vh] bg-no-repeat bg-center bg-cover;
+}
+.banner__wrapper h1{
+    @apply font-semibold text-center pt-[8rem] text-[2.7rem] md:text-[4rem] text-white;
+}
+.banner__wrapper .banner__button{
+    @apply flex flex-col pt-16 text-center md:flex-row gap-5 md:gap-5 justify-center;
+}
+.banner__wrapper .banner__button a{
+    @apply text-center text-white text-[1rem] hover:text-orange-600 block m-auto md:mx-4;
+}
+
+
+/* ---BURGER--- */
+.burger__menu
+    {
+        @apply md:hidden;
+    }
+
+    .burger__menu span
+    {
+        @apply w-[1.5rem] h-[.2rem] bg-light block rounded-full transition-all 
+    }
+    .burger__menu span:nth-child(2)
+    {
+        @apply my-1 w-[1rem] ;
+    }
+    .burger__menu span:last-child
+    {
+        @apply w-[0.5rem] ;
+    }
+    .burger__menu.open span:first-child
+    {
+        @apply transform translate-y-[10px] rotate-[225deg] transition-all
+    }
+
+    .burger__menu.open span:nth-child(2)
+    {
+        @apply opacity-0 transition-all
+    }
+
+    .burger__menu.open span:last-child
+    {
+        @apply transform translate-y-[-7px] rotate-[-225deg] transition-all w-[1.5rem]
+    }
+}
+
+/* UTILITIES */
+@layer utilities{
+    .btn {
+        @apply bg-transparent border-[0.1rem] border-white rounded-full py-2 w-[10rem] hover:bg-white;
+    }
+    .bg--orange{
+        @apply bg-orange-600 border-[0.1rem] border-none rounded-full py-2 w-[10rem] hover:bg-white;
+    }
+    .btn--service{
+        @apply bg-orange-600 border-[0.1rem] border-none  py-2 w-[100%] absolute;
+    }
+}
+
+/* ---SERVICES--- */
+.services__wrapper h3{
+    @apply text-orange-600 font-bold text-4xl text-center pt-8 pb-4 md:text-left;
+}
+.services__wrapper p{
+    @apply text-sm text-center text-gray-600 pb-3 md:text-left;
+}
+.services__wrapper .services__cards{
+    @apply border-2 rounded-[1.5rem] p-10 my-10 relative pb-[6rem] md:pt-10 md:hover:scale-[1.1] transition-all;
+}
+.services__wrapper .services__cards h4{
+    @apply font-semibold text-center text-[1.5rem] pb-8;
+}
+.services__wrapper .services__cards p{
+    @apply text-justify pb-8;
+}
+.services__wrapper .services__cards ul{
+    @apply mb-0 ml-5;
+}
+.services__wrapper .services__cards ul li{
+    @apply text-gray-600 list-disc pb-2;
+}
+.services__cards__button {
+    @apply absolute bottom-0 mt-0 pt-4 text-center pb-4 md:bg-transparent text-orange-600 border-t-2 border-orange-600 w-[80%] left-10 ;
+}
+.services__cards__button:hover {
+    @apply bottom-0 left-0 text-center bg-orange-600 text-white w-[100%] transition-all;
+}
+.services__listcards{
+    @apply md:flex gap-[3rem];
+}
+
+/* ---FEATURES--- */
+.feature__wrapper{
+    @apply md:flex;
+}
+.feature__listcardsa{
+    @apply bg-insightProjecta min-h-[75vh] bg-center bg-cover bg-no-repeat px-10 pt-[5.5rem] md:w-[100rem];
+}
+.feature__listcardsb{
+    @apply bg-insightProjectb min-h-[75vh] bg-center bg-cover bg-no-repeat my-10 px-10 pt-[5.5rem] md:my-0 md:w-[100rem];
+}
+.feature__listcardsc{
+    @apply bg-insightProjectc min-h-[75vh] bg-center bg-cover bg-no-repeat px-10 pt-[5.5rem] md:w-[100rem];
+}
+.feature__cards{
+    @apply p-[2rem] pb-[4rem] bg-black bg-opacity-50;
+}
+.feature__cards h5{
+    @apply text-white text-center font-bold text-xl;
+}
+.feature__cards p{
+    @apply text-white text-justify pt-7 pb-[4rem];
+}
+.feature__cards a{
+    @apply text-white py-3 px-5 bg-orange-600 rounded-full hover:bg-white hover:text-orange-600 block m-auto text-center w-[10rem];
+}
+
+/* ---CONTACTS--- */
+.contacts__cta{
+    @apply flex flex-col-reverse gap-10 md:flex-row md:gap-[7rem];
+}
+.contacts__wrapper h3{
+    @apply text-orange-600 font-bold text-4xl text-center pt-8 pb-4 md:text-left;
+}
+.contacts__wrapper p{
+    @apply text-base text-center pb-10 md:text-left;
+}
+
+.contacts__wrapper .contacts__address .contact__icondetails{
+    @apply flex gap-8;
+}
+.contacts__address{
+    @apply mt-[5rem]
+}
+.contact__icondetails .icon li i{
+    @apply text-orange-600 text-[1.3rem] py-9 ;
+}
+.contact__icondetails .details li{
+    @apply py-[1.8rem] ;
+}
+.contacts__message{
+    @apply border-2 rounded-[1.5rem] p-[2rem] md:w-[35rem] md:mt-[5rem];
+}
+.contacts__message form input{
+    @apply border-[0.001rem] rounded-[0.5rem] p-1 w-[100%] border-gray-950 mb-3;
+}
+.contacts__message form textarea{
+    @apply border-[0.001rem] rounded-[0.5rem] p-1 w-[100%] border-gray-950 mb-3;
+}
+.contacts__message form button{
+    @apply bg-orange-600 text-white px-4 py-2 rounded-full float-right hover:bg-white hover:text-orange-600;
+}
+
+/* ---FOOTER--- */
+.footer{
+    @apply mt-10 bg-gray-400;
+}
+.footer__wrapper{
+    @apply md:flex md:flex-row md:justify-between;
+}
+.footer__box{
+    @apply flex flex-col-reverse md:flex-row md:w-[55%] md:justify-between;
+}
+.footer__box .footer__icons{
+    @apply text-center gap-5 pt-4 md:flex md:pt-0;
+}
+.footer__icons i{
+    @apply text-center p-5 text-white;
+}
+.footer__logo img{
+    @apply w-[5rem] block m-auto;
+}
+.footer__rights p{
+    @apply text-center text-white text-sm;
+}
+
